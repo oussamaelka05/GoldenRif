@@ -38,9 +38,11 @@ const Bookings = () => {
     }
   };
 
-  const filtered = filter === 'all' ? bookings : bookings.filter((b) => b.status === filter);
+  const filtered = (filter === 'all' ? bookings : bookings.filter((b) => b.status === filter))
+    .slice()
+    .sort((a, b) => (a.status === 'pending' ? -1 : b.status === 'pending' ? 1 : 0));
 
-  const nights = (start, end) => Math.round((new Date(end) - new Date(start)) / (1000 * 60 * 60 * 24));
+  const nights = (start, end) => Math.max(1, Math.round((new Date(end) - new Date(start)) / (1000 * 60 * 60 * 24)));
 
   const totalLabel = `${bookings.length} ${bookings.length !== 1 ? t('owner.bookings.bookings') : t('owner.bookings.booking')} ${t('owner.bookings.total')}`;
 

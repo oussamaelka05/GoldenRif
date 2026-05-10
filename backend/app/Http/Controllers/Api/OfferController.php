@@ -32,7 +32,10 @@ class OfferController extends Controller
     public function myOffers(Request $request)
     {
         return response()->json(
-            $request->user()->offers()->with('car:id,brand,model,image_url')->latest()->get()
+            $request->user()->offers()
+                ->with('car:id,brand,model,image_url,price_per_day')
+                ->latest()
+                ->get()
         );
     }
 
@@ -57,7 +60,9 @@ class OfferController extends Controller
 
         $data['user_id'] = $request->user()->id;
 
-        return response()->json(Offer::create($data), 201);
+        $offer = Offer::create($data);
+
+        return response()->json($offer->load('car:id,brand,model,image_url,price_per_day'), 201);
     }
 
     // Owner: toggle active / update
