@@ -20,6 +20,7 @@ const Profile = () => {
   const [errors, setErrors]   = useState({});
   const [loading, setLoading] = useState(false);
   const [saved, setSaved]     = useState(false);
+  const [saveError, setSaveError] = useState('');
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));

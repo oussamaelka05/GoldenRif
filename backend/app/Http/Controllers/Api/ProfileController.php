@@ -21,8 +21,8 @@ class ProfileController extends Controller
             'password_confirmation' => 'nullable|string',
         ]);
 
-        $user->name     = $data['name'];
-        $user->email    = $data['email'];
+        $user->name     = trim($data['name']);
+        $user->email    = strtolower(trim($data['email']));
         $user->whatsapp = $data['whatsapp'] ?? null;
 
         if (!empty($data['password'])) {

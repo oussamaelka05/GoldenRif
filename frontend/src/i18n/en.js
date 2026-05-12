@@ -1,4 +1,4 @@
-const en = {
+﻿const en = {
   nav: {
     home: 'Home', cars: 'Cars', about: 'About', contact: 'Contact',
     signIn: 'Sign In', getStarted: 'Get Started',
