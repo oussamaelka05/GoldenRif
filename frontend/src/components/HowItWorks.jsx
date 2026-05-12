@@ -19,7 +19,7 @@ const HowItWorks = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <div className="hidden md:block absolute top-16 left-1/3 right-1/3 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent" />
+          <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-amber-500/60 to-transparent" />
           {steps.map((step, i) => {
             const Icon = stepIcons[i];
             return (
@@ -27,7 +27,7 @@ const HowItWorks = () => {
                 <div className="text-xs font-bold text-amber-500 tracking-widest mb-4">
                   {String(i + 1).padStart(2, '0')}
                 </div>
-                <div className="w-20 h-20 rounded-full bg-slate-800 border-2 border-slate-700 group-hover:border-amber-500 group-hover:bg-slate-700 flex items-center justify-center mb-6 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-amber-500/20 relative z-10">
+                <div className="w-20 h-20 rounded-full bg-slate-800 border-2 border-slate-700 group-hover:border-amber-500 group-hover:bg-slate-700 flex items-center justify-center mb-6 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-amber-500/20 group-hover:ring-4 group-hover:ring-amber-500/10 relative z-10">
                   <Icon className="text-2xl text-amber-400" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>

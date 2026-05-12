@@ -17,19 +17,19 @@ const Testimonials = () => {
           <p className="text-slate-500 mt-4 text-lg max-w-xl mx-auto">{t('testimonials.subtitle')}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {testimonials.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100"
+              className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 flex flex-col"
             >
-              <FaQuoteLeft className="text-amber-400 text-2xl mb-5" />
+              <FaQuoteLeft className="text-amber-400 text-2xl mb-5 shrink-0 group-hover:scale-110 transition-transform" />
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <FaStar key={i} className={i < item.rating ? 'text-amber-400' : 'text-slate-200'} size={14} />
                 ))}
               </div>
-              <p className="text-slate-600 leading-relaxed mb-6 italic">"{item.text}"</p>
+              <p className="text-slate-600 leading-relaxed mb-6 italic flex-1">"{item.text}"</p>
               <div className="flex items-center gap-4 pt-5 border-t border-slate-100">
                 <img src={item.avatar} alt={item.name} className="w-12 h-12 rounded-full object-cover ring-2 ring-amber-200" />
                 <div>
