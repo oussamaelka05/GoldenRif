@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiUsers, FiZap } from 'react-icons/fi';
+import { FiUsers, FiZap, FiMapPin } from 'react-icons/fi';
 import { FaGasPump, FaCar } from 'react-icons/fa';
 import { useLanguage } from '../context/LanguageContext';
 import api from '../services/api';
@@ -23,8 +23,9 @@ const FeaturedCars = () => {
     api.get('/cars').then(({ data }) => setAllCars(data)).finally(() => setLoading(false));
   }, []);
 
+  const countFor  = (cat) => cat === 'all' ? allCars.length : allCars.filter((c) => c.category === cat).length;
   const filtered  = active === 'all' ? allCars : allCars.filter((c) => c.category === active);
-  const displayed = filtered.slice(0, 8);
+  const displayed = filtered.slice(0, 9);
 
   return (
     <section id="cars" className="py-20 px-4 bg-slate-50">
@@ -39,12 +40,19 @@ const FeaturedCars = () => {
         <div className="flex flex-wrap justify-center gap-3 mb-10">
           {categories.map((cat) => (
             <button key={cat} onClick={() => setActive(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold capitalize transition-all duration-200 ${
+              className={`px-5 py-2 rounded-full text-sm font-semibold capitalize transition-all duration-200 flex items-center gap-1.5 ${
                 active === cat
                   ? 'bg-amber-500 text-white shadow-md shadow-amber-500/30 scale-105'
                   : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
               }`}>
               {cat === 'all' ? t('featured.all') : cat}
+              {!loading && (
+                <span className={`text-xs font-bold rounded-full px-1.5 py-0.5 leading-none ${
+                  active === cat ? 'bg-white/25 text-white' : 'bg-slate-100 text-slate-400'
+                }`}>
+                  {countFor(cat)}
+                </span>
+              )}
             </button>
           ))}
         </div>
@@ -87,6 +95,11 @@ const FeaturedCars = () => {
                     <span className="flex items-center gap-1.5 text-xs text-slate-500 bg-slate-50 border border-slate-100 px-3 py-1.5 rounded-full">
                       <FaGasPump size={11} /> {car.fuel_type}
                     </span>
+                    {car.location && (
+                      <span className="flex items-center gap-1.5 text-xs text-slate-500 bg-slate-50 border border-slate-100 px-3 py-1.5 rounded-full">
+                        <FiMapPin size={11} /> {car.location}
+                      </span>
+                    )}
                   </div>
                   <div className="flex items-center justify-between pt-4 border-t border-slate-100">
                     <div>

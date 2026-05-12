@@ -31,6 +31,14 @@ const testimonials = [
     rating: 5,
     text: 'Great experience from start to finish. The car was clean, the owner was responsive on WhatsApp, and the price was unbeatable. GoldenRif is my go-to rental platform.',
   },
+  {
+    id: 5,
+    name: 'Fatima Zahra Idrissi',
+    role: 'Solo Traveler',
+    avatar: 'https://randomuser.me/api/portraits/women/26.jpg',
+    rating: 5,
+    text: 'I was nervous renting from a private owner for the first time, but the platform made everything transparent and safe. The car was exactly as described and pick-up was effortless.',
+  },
 ];
 
 export default testimonials;
