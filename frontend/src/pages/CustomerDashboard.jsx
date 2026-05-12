@@ -47,7 +47,7 @@ const CustomerDashboard = () => {
             <FaCar className="text-white" />
           </div>
           <span className="text-white font-bold text-lg">
-            Drive<span className="text-amber-400">Luxe</span>
+            Golden<span className="text-amber-400">Rif</span>
           </span>
         </div>
 
