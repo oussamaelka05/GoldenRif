@@ -23,6 +23,14 @@ const testimonials = [
     rating: 4,
     text: 'Rented a sports car for a weekend getaway and had the time of my life. Incredible vehicle, fair pricing, and excellent customer support. Highly recommend GoldenRif!',
   },
+  {
+    id: 4,
+    name: 'Youssef El Amrani',
+    role: 'Local Commuter',
+    avatar: 'https://randomuser.me/api/portraits/men/75.jpg',
+    rating: 5,
+    text: 'Great experience from start to finish. The car was clean, the owner was responsive on WhatsApp, and the price was unbeatable. GoldenRif is my go-to rental platform.',
+  },
 ];
 
 export default testimonials;
