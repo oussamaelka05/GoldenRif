@@ -13,8 +13,8 @@ import { useLanguage } from '../context/LanguageContext';
 import api from '../services/api';
 
 const categoryColors = {
-  sedan: 'bg-blue-100 text-blue-700', suv: 'bg-green-100 text-green-700',
-  sports: 'bg-red-100 text-red-700',  luxury: 'bg-purple-100 text-purple-700',
+  sedan: 'bg-blue-100 text-blue-700',   suv: 'bg-green-100 text-green-700',
+  sports: 'bg-red-100 text-red-700',    luxury: 'bg-purple-100 text-purple-700',
   van: 'bg-orange-100 text-orange-700', convertible: 'bg-pink-100 text-pink-700',
 };
 

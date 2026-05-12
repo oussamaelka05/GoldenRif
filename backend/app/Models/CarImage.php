@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 class CarImage extends Model
 {
     protected $fillable = ['car_id', 'image_url', 'sort_order'];
+    protected $casts    = ['sort_order' => 'integer'];
 
     public function car() { return $this->belongsTo(Car::class); }
 

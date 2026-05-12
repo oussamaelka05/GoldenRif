@@ -76,6 +76,10 @@ class BookingController extends Controller
         $data['total_price'] = round($priceDay * $days, 2);
         $data['status']      = 'pending';
 
+        if ($days < 1) {
+            return response()->json(['message' => 'Booking must be at least 1 day.'], 422);
+        }
+
         $booking = Booking::create($data);
 
         // Notify the car owner

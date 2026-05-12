@@ -15,6 +15,7 @@ const statusBadge = {
   pending:   'bg-yellow-100 text-yellow-700',
   confirmed: 'bg-green-100 text-green-700',
   cancelled: 'bg-red-100 text-red-600',
+  default:   'bg-slate-100 text-slate-600',
 };
 
 const categoryColors = {

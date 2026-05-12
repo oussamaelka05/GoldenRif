@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('whatsapp')->nullable()->after('role');
+            $table->string('whatsapp', 20)->nullable()->after('role');
         });
     }
 

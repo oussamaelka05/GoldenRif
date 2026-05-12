@@ -24,6 +24,7 @@ class CreateCarsTable extends Migration
             $table->string('location')->nullable();
             $table->boolean('available')->default(true);
             $table->timestamps();
+            $table->index(['user_id', 'available']);
         });
     }
 

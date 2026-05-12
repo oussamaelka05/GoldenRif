@@ -70,6 +70,7 @@ class CarController extends Controller
             'price_asc'  => $query->orderBy('price_per_day', 'asc'),
             'price_desc' => $query->orderBy('price_per_day', 'desc'),
             'rating'     => $query->orderByDesc('reviews_avg_rating'),
+            'popular'    => $query->orderByDesc('reviews_count'),
             default      => $query->latest(),
         };
 

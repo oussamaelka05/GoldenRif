@@ -71,6 +71,18 @@ const cars = [
     reviews: 145,
     image: 'https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=800&q=80',
   },
+  {
+    id: 7,
+    name: 'Toyota Land Cruiser',
+    category: 'SUV',
+    price: 130,
+    seats: 7,
+    transmission: 'Automatic',
+    fuel: 'Diesel',
+    rating: 4.7,
+    reviews: 98,
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+  },
 ];
 
 export default cars;

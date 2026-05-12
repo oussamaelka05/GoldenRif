@@ -38,6 +38,13 @@ const ProtectedOwnerRoute = ({ children }) => {
   return children;
 };
 
+const ProtectedCustomerRoute = ({ children }) => {
+  const { user } = useAuth();
+  if (!user) return <Navigate to="/login" replace />;
+  if (user.role !== 'customer') return <Navigate to="/" replace />;
+  return children;
+};
+
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuth();
   if (!user) return <Navigate to="/login" replace />;
