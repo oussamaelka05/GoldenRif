@@ -15,7 +15,7 @@ const EditCar = () => {
   // existing images loaded from server: [{ id, image_url }]
   const [existingImages, setExistingImages] = useState([]);
   const [deletedIds, setDeletedIds]         = useState([]);
-  // new images picked by the user
+  // new images picked by the user (max 5 total)
   const [newFiles, setNewFiles]             = useState([]);
   const [newPreviews, setNewPreviews]       = useState([]);
 

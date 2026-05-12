@@ -16,9 +16,9 @@ const OwnerLayout = ({ children }) => {
   const navItems = [
     { key: 'dashboard', icon: FiGrid,        to: '/owner/dashboard' },
     { key: 'myCars',    icon: FaCar,          to: '/owner/cars' },
-    { key: 'myOffers',  icon: FiTag,          to: '/owner/offers' },
     { key: 'bookings',  icon: FiCalendar,     to: '/owner/bookings' },
     { key: 'earnings',  icon: FiDollarSign,   to: '/owner/earnings' },
+    { key: 'myOffers',  icon: FiTag,          to: '/owner/offers' },
   ];
 
   const handleLogout = async () => {

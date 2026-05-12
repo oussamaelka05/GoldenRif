@@ -9,7 +9,7 @@ const initialForm = {
   brand: '', model: '', year: new Date().getFullYear(),
   category: 'sedan', price_per_day: '', seats: 5,
   transmission: 'automatic', fuel_type: 'petrol',
-  location: '', whatsapp: '', description: '',
+  location: '', whatsapp: '', description: '', available: true,
 };
 
 const AddCar = () => {

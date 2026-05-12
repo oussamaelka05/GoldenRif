@@ -17,10 +17,10 @@ const OwnerDashboard = () => {
   }, []);
 
   const cards = [
-    { label: t('owner.dashboard.myCarsListed'),  value: stats?.cars ?? '…',                      Icon: FaCar,        color: 'bg-amber-500' },
-    { label: t('owner.dashboard.activeBookings'), value: stats?.active_bookings ?? '…',            Icon: FiCalendar,   color: 'bg-blue-500' },
-    { label: t('owner.dashboard.totalEarnings'),  value: stats ? `$${stats.total_earnings}` : '…', Icon: FiDollarSign, color: 'bg-green-500' },
-    { label: t('owner.dashboard.avgRating'),      value: '—',                                       Icon: FiStar,       color: 'bg-purple-500' },
+    { label: t('owner.dashboard.myCarsListed'),  value: stats?.cars ?? '…',                        Icon: FaCar,        color: 'bg-amber-500' },
+    { label: t('owner.dashboard.activeBookings'), value: stats?.active_bookings ?? '…',              Icon: FiCalendar,   color: 'bg-blue-500' },
+    { label: t('owner.dashboard.totalEarnings'),  value: stats ? `$${stats.total_earnings}` : '…',   Icon: FiDollarSign, color: 'bg-green-500' },
+    { label: t('owner.dashboard.avgRating'),      value: stats?.avg_rating ? `${stats.avg_rating}★` : '—', Icon: FiStar, color: 'bg-purple-500' },
   ];
 
   const noCars = stats?.cars === 0;
