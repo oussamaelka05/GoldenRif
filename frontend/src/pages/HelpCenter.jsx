@@ -26,14 +26,23 @@ const HelpCenter = () => {
 
   return (
     <PageLayout title={t('help.title')} subtitle={t('help.subtitle')}>
-      <div className="mb-10">
+      <div className="mb-10 relative">
         <input
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder={t('help.searchPlaceholder')}
-          className="w-full bg-white border border-slate-200 text-slate-800 placeholder-slate-400 px-5 py-3.5 rounded-xl focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 text-sm shadow-sm"
+          className="w-full bg-white border border-slate-200 text-slate-800 placeholder-slate-400 px-5 py-3.5 rounded-xl focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 text-sm shadow-sm pr-10"
         />
+        {search && (
+          <button
+            onClick={() => setSearch('')}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 transition-colors text-lg leading-none"
+            aria-label="Clear search"
+          >
+            ×
+          </button>
+        )}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">

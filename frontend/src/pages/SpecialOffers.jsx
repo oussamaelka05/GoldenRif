@@ -9,7 +9,7 @@ import api from '../services/api';
 const discountLabel = (offer) =>
   offer.discount_type === 'percentage'
     ? `${offer.discount_value}% OFF`
-    : `$${offer.discount_value} OFF/day`;
+    : `$${Number(offer.discount_value).toFixed(2)} OFF/day`;
 
 const discountedPrice = (price, offer) => {
   if (offer.discount_type === 'percentage') {

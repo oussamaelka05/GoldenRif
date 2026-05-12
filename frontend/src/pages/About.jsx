@@ -55,7 +55,7 @@ const About = () => {
 
       {/* Stats */}
       <div className="bg-amber-500">
-        <div className="max-w-4xl mx-auto px-4 py-8 grid grid-cols-3 gap-4 text-center">
+        <div className="max-w-4xl mx-auto px-4 py-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
           <div>
             <p className="text-3xl font-extrabold text-white">{stats.cars}</p>
             <p className="text-amber-100 text-sm font-medium mt-0.5">{t('about.statCars')}</p>
@@ -67,6 +67,10 @@ const About = () => {
           <div>
             <p className="text-3xl font-extrabold text-white">100%</p>
             <p className="text-amber-100 text-sm font-medium mt-0.5">{t('about.statOwner')}</p>
+          </div>
+          <div>
+            <p className="text-3xl font-extrabold text-white">24/7</p>
+            <p className="text-amber-100 text-sm font-medium mt-0.5">{t('about.statSupport')}</p>
           </div>
         </div>
       </div>

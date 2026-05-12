@@ -25,16 +25,15 @@ class FavoriteController extends Controller
     // Toggle favorite for a car
     public function toggle(Request $request, Car $car)
     {
-        $existing = Favorite::where('user_id', $request->user()->id)
-            ->where('car_id', $car->id)
-            ->first();
+        $userId = $request->user()->id;
 
-        if ($existing) {
-            $existing->delete();
+        $deleted = Favorite::where('user_id', $userId)->where('car_id', $car->id)->delete();
+
+        if ($deleted) {
             return response()->json(['saved' => false]);
         }
 
-        Favorite::create(['user_id' => $request->user()->id, 'car_id' => $car->id]);
+        Favorite::create(['user_id' => $userId, 'car_id' => $car->id]);
 
         return response()->json(['saved' => true]);
     }

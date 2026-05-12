@@ -3,21 +3,24 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Booking;
 use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
     // Public: reviews for a car
-    public function index($carId)
+    public function index(int $carId)
     {
         $reviews = Review::where('car_id', $carId)
             ->with('user:id,name')
-            ->latest()
+            ->latest('created_at')
             ->get();
 
-        return response()->json($reviews);
+        return response()->json([
+            'reviews'    => $reviews,
+            'avg_rating' => $reviews->isNotEmpty() ? round($reviews->avg('rating'), 1) : null,
+            'total'      => $reviews->count(),
+        ]);
     }
 
     // Any logged-in user can review a car (one review per user per car)

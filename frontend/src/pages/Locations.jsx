@@ -21,8 +21,8 @@ const Locations = () => {
         map[city].push(car);
       });
       const sorted = Object.entries(map)
-        .map(([city, cars]) => ({ city, cars }))
-        .sort((a, b) => b.cars.length - a.cars.length);
+        .map(([city, cars]) => ({ city, cars, available: cars.filter((c) => c.available).length }))
+        .sort((a, b) => b.available - a.available || b.cars.length - a.cars.length);
       setGroups(sorted);
     }).finally(() => setLoading(false));
   }, []);
@@ -49,7 +49,7 @@ const Locations = () => {
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {groups.map(({ city, cars }) => {
+          {groups.map(({ city, cars, available }) => {
             const previews = cars.slice(0, 3).filter((c) => c.image_url);
             return (
               <button
@@ -86,8 +86,8 @@ const Locations = () => {
 
                 <div className="px-4 py-3 flex items-center justify-between">
                   <span className="text-sm text-slate-500">
-                    <span className="font-bold text-slate-900">{cars.length}</span>{' '}
-                    {cars.length !== 1 ? t('locations.cars') : t('locations.car')} {t('locations.available')}
+                    <span className="font-bold text-slate-900">{available}</span>{' '}
+                    {available !== 1 ? t('locations.cars') : t('locations.car')} {t('locations.available')}
                   </span>
                   <span className="flex items-center gap-1 text-amber-500 text-xs font-bold group-hover:gap-2 transition-all">
                     {t('locations.view')} <FiArrowRight size={13} />
