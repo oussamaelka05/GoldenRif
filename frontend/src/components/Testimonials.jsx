@@ -29,7 +29,7 @@ const Testimonials = () => {
                   <FaStar key={i} className={i < item.rating ? 'text-amber-400' : 'text-slate-200'} size={14} />
                 ))}
               </div>
-              <p className="text-slate-600 leading-relaxed mb-6">"{item.text}"</p>
+              <p className="text-slate-600 leading-relaxed mb-6 italic">"{item.text}"</p>
               <div className="flex items-center gap-4 pt-5 border-t border-slate-100">
                 <img src={item.avatar} alt={item.name} className="w-12 h-12 rounded-full object-cover ring-2 ring-amber-200" />
                 <div>

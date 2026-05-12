@@ -24,7 +24,7 @@ const FeaturedCars = () => {
   }, []);
 
   const filtered  = active === 'all' ? allCars : allCars.filter((c) => c.category === active);
-  const displayed = filtered.slice(0, 6);
+  const displayed = filtered.slice(0, 8);
 
   return (
     <section id="cars" className="py-20 px-4 bg-slate-50">
