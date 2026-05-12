@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('cars', function (Blueprint $table) {
-            $table->string('whatsapp')->nullable()->after('location');
+            $table->string('whatsapp', 20)->nullable()->after('location');
         });
     }
 
