@@ -14,6 +14,7 @@ class Booking extends Model
         'start_date'  => 'date:Y-m-d',
         'end_date'    => 'date:Y-m-d',
         'total_price' => 'float',
+        'created_at'  => 'datetime',
     ];
 
     public function car()

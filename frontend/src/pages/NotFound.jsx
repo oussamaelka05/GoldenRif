@@ -14,7 +14,7 @@ const NotFound = () => {
         <div className="w-20 h-20 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
           <FaCar className="text-amber-500 text-4xl" />
         </div>
-        <h1 className="text-7xl font-extrabold text-slate-900 mb-2">404</h1>
+        <h1 className="text-7xl font-extrabold text-slate-900 mb-2 tracking-tight">404</h1>
         <h2 className="text-xl font-bold text-slate-700 mb-3">{t('notFound.title')}</h2>
         <p className="text-slate-500 mb-8 max-w-sm">
           {t('notFound.subtitle')}

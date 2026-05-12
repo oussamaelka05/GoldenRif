@@ -50,7 +50,7 @@ const Login = () => {
         <div className="relative text-center">
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="bg-amber-500 p-3 rounded-2xl"><FaCar className="text-white text-3xl" /></div>
-            <span className="text-white text-4xl font-extrabold">Drive<span className="text-amber-400">Luxe</span></span>
+            <span className="text-white text-4xl font-extrabold">Golden<span className="text-amber-400">Rif</span></span>
           </div>
           <h2 className="text-3xl font-bold text-white mb-4">{t('login.welcomeBack')}</h2>
           <p className="text-slate-400 text-lg max-w-sm">{t('login.welcomeDesc')}</p>
@@ -70,7 +70,7 @@ const Login = () => {
         <div className="w-full max-w-md">
           <div className="flex items-center gap-2 mb-10 lg:hidden">
             <div className="bg-amber-500 p-2 rounded-xl"><FaCar className="text-white text-lg" /></div>
-            <span className="text-white text-2xl font-bold">Drive<span className="text-amber-400">Luxe</span></span>
+            <span className="text-white text-2xl font-bold">Golden<span className="text-amber-400">Rif</span></span>
           </div>
 
           <h1 className="text-3xl font-extrabold text-white mb-2">{t('login.title')}</h1>

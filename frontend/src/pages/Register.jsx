@@ -65,7 +65,7 @@ const Register = () => {
             <FaCar className="text-white text-xl" />
           </div>
           <span className="text-white text-2xl font-extrabold">
-            Drive<span className="text-amber-400">Luxe</span>
+            Golden<span className="text-amber-400">Rif</span>
           </span>
         </div>
 

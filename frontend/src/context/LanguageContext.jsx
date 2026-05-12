@@ -7,7 +7,7 @@ const translations = { en, fr };
 const LanguageContext = createContext(null);
 
 export const LanguageProvider = ({ children }) => {
-  const [lang, setLang] = useState(() => localStorage.getItem('lang') || 'en');
+  const [lang, setLang] = useState(() => localStorage.getItem('lang') || (navigator.language?.startsWith('fr') ? 'fr' : 'en'));
 
   const switchLang = (l) => {
     setLang(l);

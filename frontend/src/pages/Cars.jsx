@@ -9,6 +9,8 @@ import { useLanguage } from '../context/LanguageContext';
 import api from '../services/api';
 
 const categories = ['all', 'sedan', 'suv', 'sports', 'luxury', 'van', 'convertible'];
+const PRICE_MIN = 0;
+const PRICE_MAX = 1000;
 
 const categoryColors = {
   sedan: 'bg-blue-100 text-blue-700',
