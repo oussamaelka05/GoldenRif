@@ -26,11 +26,34 @@ const FAQItem = ({ q, a }) => {
 
 const FAQ = () => {
   const { t } = useLanguage();
+  const [search, setSearch] = useState('');
   const sections = t('faq.sections');
+
+  const filteredSections = sections
+    .map((sec) => ({
+      ...sec,
+      items: sec.items.filter(
+        (item) =>
+          !search ||
+          item.q.toLowerCase().includes(search.toLowerCase()) ||
+          item.a.toLowerCase().includes(search.toLowerCase())
+      ),
+    }))
+    .filter((sec) => sec.items.length > 0);
+
   return (
     <PageLayout title={t('faq.title')} subtitle={t('faq.subtitle')}>
+      <div className="mb-8">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder={t('faq.searchPlaceholder')}
+          className="w-full bg-white border border-slate-200 text-slate-800 placeholder-slate-400 px-5 py-3 rounded-xl focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 text-sm shadow-sm"
+        />
+      </div>
       <div className="space-y-10 mb-12">
-        {sections.map((sec) => (
+        {filteredSections.map((sec) => (
           <div key={sec.heading}>
             <h2 className="text-lg font-extrabold text-slate-900 mb-4">{sec.heading}</h2>
             <div className="space-y-2">

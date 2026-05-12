@@ -12,7 +12,7 @@ class NotificationController extends Controller
     {
         $notifications = AppNotification::where('user_id', $request->user()->id)
             ->latest()
-            ->take(30)
+            ->limit(50)
             ->get();
 
         return response()->json($notifications);

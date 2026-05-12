@@ -22,6 +22,19 @@ const Cancellation = () => {
   return (
     <PageLayout title={t('cancellation.title')} subtitle={t('cancellation.subtitle')}>
 
+      {/* Policy summary badges */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        {tiers.map(({ refund }, i) => {
+          const Icon = tierIcons[i];
+          const c = colorMap[tierColors[i]];
+          return (
+            <span key={i} className={`flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border ${c.bg} ${c.border} ${c.text}`}>
+              <Icon size={11} /> {refund}
+            </span>
+          );
+        })}
+      </div>
+
       {/* Context note */}
       <div className="bg-slate-900 rounded-2xl p-5 mb-8 flex items-start gap-4">
         <FiMessageSquare className="text-amber-400 mt-0.5 shrink-0" size={20} />

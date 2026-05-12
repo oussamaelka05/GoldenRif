@@ -10,10 +10,12 @@ const Section = ({ title, children }) => (
 );
 
 const typeColors = {
-  Essential:  'bg-green-100 text-green-700',
-  Functional: 'bg-blue-100 text-blue-700',
-  Essentiel:  'bg-green-100 text-green-700',
-  Fonctionnel:'bg-blue-100 text-blue-700',
+  Essential:   'bg-green-100 text-green-700',
+  Functional:  'bg-blue-100 text-blue-700',
+  Analytics:   'bg-purple-100 text-purple-700',
+  Essentiel:   'bg-green-100 text-green-700',
+  Fonctionnel: 'bg-blue-100 text-blue-700',
+  Analytique:  'bg-purple-100 text-purple-700',
 };
 
 const CookiePolicy = () => {
@@ -38,7 +40,7 @@ const CookiePolicy = () => {
 
         <Section title={headings[2]}>
           <div className="overflow-x-auto mt-2">
-            <table className="w-full text-xs border-collapse">
+            <table className="w-full text-xs border-collapse" aria-label="Cookies used on this site">
               <thead>
                 <tr className="bg-slate-50">
                   <th className="text-left px-4 py-2.5 border border-slate-200 font-bold text-slate-700">{headers.name}</th>

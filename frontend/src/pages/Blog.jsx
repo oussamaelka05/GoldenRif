@@ -42,7 +42,10 @@ const Blog = () => {
                 <h3 className="font-extrabold text-slate-900 text-base mt-3 mb-2 leading-snug">{p.title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed mb-4 line-clamp-2">{p.excerpt}</p>
                 <div className="flex items-center justify-between text-xs text-slate-400 pt-3 border-t border-slate-100">
-                  <span className="flex items-center gap-1"><FiUser size={11} /> {post.author}</span>
+                  <div className="flex items-center gap-3">
+                    <span className="flex items-center gap-1"><FiUser size={11} /> {post.author}</span>
+                    <span>{p.readTime}</span>
+                  </div>
                   <span className="flex items-center gap-1 text-amber-500 font-semibold group-hover:gap-2 transition-all">
                     {t('blog.readMore')} <FiArrowRight size={11} />
                   </span>

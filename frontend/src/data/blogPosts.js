@@ -136,7 +136,7 @@ const posts = [
     },
   },
   {
-    slug: 'GoldenRif-expands-to-fes-and-tanger',
+    slug: 'goldenrif-expands-to-fes-and-tanger',
     category: 'Company News',
     author: 'GoldenRif Team',
     image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80',

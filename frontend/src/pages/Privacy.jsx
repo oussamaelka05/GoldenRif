@@ -15,6 +15,10 @@ const Privacy = () => {
   const b = t('privacy.body');
   return (
     <PageLayout title={t('privacy.title')} subtitle={t('privacy.subtitle')}>
+      <div className="bg-amber-50 border border-amber-200 rounded-xl px-5 py-3 text-xs text-amber-700 mb-6 flex items-center gap-2">
+        <span className="font-bold">{t('privacy.lastUpdated')}</span>
+        <span>January 2026</span>
+      </div>
       <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-8">
 
         <Section title={headings[0]}>

@@ -2,10 +2,13 @@ import React from 'react';
 import PageLayout from '../components/PageLayout';
 import { useLanguage } from '../context/LanguageContext';
 
-const Section = ({ title, children }) => (
-  <div className="mb-8">
-    <h2 className="text-lg font-extrabold text-slate-900 mb-3">{title}</h2>
-    <div className="text-slate-600 text-sm leading-relaxed space-y-2">{children}</div>
+const Section = ({ title, id, children }) => (
+  <div id={id} className="mb-8 scroll-mt-6">
+    <h2 className="text-lg font-extrabold text-slate-900 mb-3 flex items-center gap-2">
+      <span className="w-1 h-5 bg-amber-500 rounded-full shrink-0" />
+      {title}
+    </h2>
+    <div className="text-slate-600 text-sm leading-relaxed space-y-2 pl-3">{children}</div>
   </div>
 );
 
@@ -17,12 +20,12 @@ const Terms = () => {
     <PageLayout title={t('terms.title')} subtitle={t('terms.subtitle')}>
       <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-8">
 
-        <Section title={headings[0]}>
+        <Section title={headings[0]} id="acceptance">
           <p>{b.s1p1}</p>
           <p>{b.s1p2}</p>
         </Section>
 
-        <Section title={headings[1]}>
+        <Section title={headings[1]} id="roles">
           <p>{b.s2p1pre}<strong className="text-slate-700">{b.s2p1owner}</strong>{b.s2p1mid}<strong className="text-slate-700">{b.s2p1renter}</strong>{b.s2p1post}</p>
           <p>{b.s2p2}</p>
         </Section>
