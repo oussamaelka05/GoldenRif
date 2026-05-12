@@ -73,8 +73,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="bg-amber-500 p-2 rounded-xl">
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="bg-amber-500 p-2 rounded-xl group-hover:bg-amber-600 transition-colors">
               <FaCar className="text-white text-lg" />
             </div>
             <span className="text-white text-xl font-bold tracking-tight">

@@ -124,7 +124,7 @@ const Footer = () => {
 
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-slate-500">© {new Date().getFullYear()} GoldenRif. {t('footer.rights')}</p>
+          <p className="text-xs text-slate-500">© {new Date().getFullYear()} GoldenRif — Al Hoceima, Morocco. {t('footer.rights')}</p>
           <div className="flex items-center gap-4 text-xs text-slate-500">
             <Link to="/terms"   className="hover:text-amber-400 transition-colors">{l.terms}</Link>
             <Link to="/privacy" className="hover:text-amber-400 transition-colors">{l.privacy}</Link>
