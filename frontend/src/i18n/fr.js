@@ -525,6 +525,13 @@ const fr = {
     helpText: "Besoin d'aide pour un litige d'annulation ?",
     contactSupport: "Contacter l'Assistance",
   },
+
+  notFound: {
+    title: 'Page Introuvable',
+    subtitle: "La page que vous cherchez n'existe pas ou a été déplacée.",
+    backHome: 'Retour à l\'Accueil',
+    browseCars: 'Parcourir les Voitures',
+  },
 };
 
 export default fr;

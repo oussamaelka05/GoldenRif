@@ -17,10 +17,11 @@ class Car extends Model
     ];
 
     protected $casts = [
-        'available' => 'boolean',
+        'available'     => 'boolean',
         'price_per_day' => 'float',
-        'year' => 'integer',
-        'seats' => 'integer',
+        'year'          => 'integer',
+        'seats'         => 'integer',
+        'created_at'    => 'datetime',
     ];
 
     public function owner()
