@@ -47,7 +47,8 @@ const MyCars = () => {
     }
   };
 
-  const countLabel = `${cars.length} ${cars.length !== 1 ? t('owner.myCars.cars') : t('owner.myCars.car')} ${t('owner.myCars.listed')}`;
+  const available  = cars.filter((c) => c.available).length;
+  const countLabel = `${cars.length} ${cars.length !== 1 ? t('owner.myCars.cars') : t('owner.myCars.car')} ${t('owner.myCars.listed')} · ${available} ${t('owner.myCars.available')}`;
 
   return (
     <OwnerLayout>
