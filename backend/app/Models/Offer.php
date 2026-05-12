@@ -16,7 +16,16 @@ class Offer extends Model
         'discount_value' => 'float',
         'valid_from'     => 'date:Y-m-d',
         'valid_until'    => 'date:Y-m-d',
+        'created_at'     => 'datetime',
     ];
+
+    public function scopeActive($query)
+    {
+        $today = now()->toDateString();
+        return $query->where('active', true)
+            ->where(fn($q) => $q->whereNull('valid_from')->orWhere('valid_from', '<=', $today))
+            ->where(fn($q) => $q->whereNull('valid_until')->orWhere('valid_until', '>=', $today));
+    }
 
     public function car()
     {

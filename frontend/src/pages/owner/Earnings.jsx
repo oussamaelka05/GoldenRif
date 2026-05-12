@@ -15,7 +15,8 @@ const Earnings = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  const nights = (start, end) => Math.round((new Date(end) - new Date(start)) / 86400000);
+  const MS_PER_DAY = 86400000;
+  const nights = (start, end) => Math.max(1, Math.round((new Date(end) - new Date(start)) / MS_PER_DAY));
 
   if (loading) {
     return (
@@ -30,9 +31,11 @@ const Earnings = () => {
     );
   }
 
+  const currentMonth = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
+
   const stats = [
     { label: t('owner.earnings.totalEarned'), value: `$${data?.total ?? 0}`, Icon: FiDollarSign, color: 'bg-green-500', sub: t('owner.earnings.allTime') },
-    { label: t('owner.earnings.thisMonth'), value: `$${data?.this_month ?? 0}`, Icon: FiTrendingUp, color: 'bg-amber-500', sub: new Date().toLocaleString('default', { month: 'long', year: 'numeric' }) },
+    { label: t('owner.earnings.thisMonth'), value: `$${data?.this_month ?? 0}`, Icon: FiTrendingUp, color: 'bg-amber-500', sub: currentMonth },
     { label: t('owner.earnings.paidBookings'), value: data?.count ?? 0, Icon: FiCalendar, color: 'bg-blue-500', sub: t('owner.earnings.confirmedLabel') },
   ];
 

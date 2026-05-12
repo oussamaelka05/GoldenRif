@@ -44,6 +44,9 @@ const AddOffer = () => {
     if (form.discount_type === 'percentage' && Number(form.discount_value) > 99) {
       setError(t('owner.addOffer.errPct')); return;
     }
+    if (form.valid_from && form.valid_until && form.valid_until < form.valid_from) {
+      setError(t('owner.addOffer.errDateRange')); return;
+    }
 
     setLoading(true);
     try {
@@ -125,6 +128,7 @@ const AddOffer = () => {
                 maxLength={150}
                 className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:border-amber-500"
               />
+              <p className="text-right text-xs text-slate-400 mt-1">{form.title.length}/150</p>
             </div>
 
             {/* Description */}

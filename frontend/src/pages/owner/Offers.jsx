@@ -13,7 +13,7 @@ const fmt = (d) =>
 const discountLabel = (offer) =>
   offer.discount_type === 'percentage'
     ? `${offer.discount_value}% OFF`
-    : `$${offer.discount_value} OFF/day`;
+    : `$${Number(offer.discount_value).toFixed(2)} OFF/day`;
 
 const Offers = () => {
   const { t } = useLanguage();
@@ -79,7 +79,14 @@ const Offers = () => {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-2xl font-extrabold text-slate-900">{t('owner.offers.title')}</h1>
-            <p className="text-slate-500 text-sm mt-1">{t('owner.offers.subtitle')}</p>
+            <p className="text-slate-500 text-sm mt-1">
+              {t('owner.offers.subtitle')}
+              {offers.length > 0 && (
+                <span className="ml-2 text-amber-500 font-semibold">
+                  · {offers.filter((o) => o.active).length} {t('owner.offers.active')}
+                </span>
+              )}
+            </p>
           </div>
           <Link
             to="/owner/offers/add"
