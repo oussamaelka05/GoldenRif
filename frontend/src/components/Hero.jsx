@@ -23,7 +23,7 @@ const Hero = () => {
   const stats = [
     { value: '500+', label: t('hero.stats.vehicles') },
     { value: '10K+', label: t('hero.stats.clients') },
-    { value: '50+',  label: t('hero.stats.cities') },
+    { value: '20+',  label: t('hero.stats.cities') },
     { value: '4.9★', label: t('hero.stats.rating') },
   ];
 
