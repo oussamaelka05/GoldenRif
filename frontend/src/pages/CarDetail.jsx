@@ -65,7 +65,7 @@ const CarDetail = () => {
       .catch((err) => { if (err.response?.status === 404) setNotFound(true); })
       .finally(() => setLoading(false));
     api.get(`/cars/${id}/unavailable`).then(({ data }) => setUnavailable(data)).catch(() => {});
-    api.get(`/cars/${id}/reviews`).then(({ data }) => setReviews(Array.isArray(data) ? data : [])).catch(() => {});
+    api.get(`/cars/${id}/reviews`).then(({ data }) => setReviews(Array.isArray(data.reviews) ? data.reviews : [])).catch(() => {});
     if (user) {
       api.get('/favorites/ids').then(({ data }) => setIsFav(data.includes(parseInt(id))));
     }
