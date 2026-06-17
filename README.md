@@ -5,8 +5,8 @@
 ### Step 1 — Clone the Repository
 
 ```bash
-git clone https://github.com/ElkasmiOussama/YOUR-REPO-NAME.git
-cd YOUR-REPO-NAME
+git clone https://github.com/oussamaelka05/GoldenRif
+cd GoldenRif
 ```
 
 ---
